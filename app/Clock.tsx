@@ -20,7 +20,7 @@ const Clock = () => {
 
         hours = hours % 12 || 12    //CONVERTING MILITARY TIME TO STANDARD
 
-        const clock = `${zero(hours)}:${minutes}:${zero(seconds)}`
+        const clock = `${zero(hours)}:${zero(minutes)}:${zero(seconds)}`
 
         return `${clock}`
     }
