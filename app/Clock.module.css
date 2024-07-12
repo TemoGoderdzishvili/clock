@@ -12,3 +12,7 @@
     cursor: default;
     text-shadow: 3px 3px 5px black;
 }
+.dayOfWeek{
+    position: relative;
+    right: 172px;
+}

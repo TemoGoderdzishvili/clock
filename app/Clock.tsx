@@ -2,6 +2,8 @@ import styles from "./Clock.module.css"
 import { useState } from "react"
 import { useEffect } from "react"
 
+const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+
 const Clock = () => {
     const [time, setTime] = useState(new Date())
 
@@ -36,11 +38,17 @@ const Clock = () => {
         return `${date}`
     }
 
+    const formatDayOfWeek = () => {
+        const dayOfWeek = daysOfWeek[time.getUTCDay() - 1]
+        return dayOfWeek
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.clock}>
                 <span>{formatTime()}</span>
                 <span>{formatDate()}</span>
+                <span className={styles.dayOfWeek} style={{color: 'black', fontSize: '50px'}}>{formatDayOfWeek()}</span>
             </div>
         </div>
     )
