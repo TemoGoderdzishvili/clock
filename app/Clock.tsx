@@ -28,9 +28,9 @@ const Clock = () => {
     }
 
     const formatDate = () => {
-        const day = time.getDate()
-        const month = time.getUTCMonth()
-        const year = time.getFullYear()
+        const day = time.getUTCDate()
+        const month = time.getUTCMonth() + 1
+        const year = time.getUTCFullYear()
         const date = `${zero(day)}.${zero(month)}.${year}`
 
         return `${date}`
