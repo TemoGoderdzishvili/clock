@@ -17,10 +17,11 @@ const Clock = () => {
         let hours = time.getHours()
         const minutes = time.getMinutes()
         const seconds = time.getSeconds()
+        const meridiem = hours >= 12 ? "PM" : "AM"
 
         hours = hours % 12 || 12    //CONVERTING MILITARY TIME TO STANDARD
 
-        const clock = `${zero(hours)}:${zero(minutes)}:${zero(seconds)}`
+        const clock = `${zero(hours)}:${zero(minutes)}:${zero(seconds)} ${meridiem}`
 
         return `${clock}`
     }
@@ -46,9 +47,9 @@ const Clock = () => {
     return (
         <div className={styles.container}>
             <div className={styles.clock}>
-                <span>{formatTime()}</span>
+                <span style={{fontSize: '5rem'}}>{formatTime()}</span>
                 <span>{formatDate()}</span>
-                <span className={styles.dayOfWeek} style={{color: 'black', fontSize: '50px'}}>{formatDayOfWeek()}</span>
+                <span className={styles.dayOfWeek} style={{color: 'black', fontSize: '4rem'}}>{formatDayOfWeek()}</span>
             </div>
         </div>
     )
